@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNI Digital</title>
+    <!-- Importar Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Flecha para retroceder -->
+    <div class="back-arrow" onclick="showError()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <div class="header">
+        <h1>DNI Digital</h1>
+    </div>
+
+    <div class="dni-card">
+        <div class="dni-header">
+            <h2>Julio Ignacio Saurin Yugdar</h2>
+        </div>
+
+        <div class="dni-image-container">
+            <!-- Aquí va la imagen del DNI -->
+            <img src="images/dni-image.jpg" alt="DNI" class="dni-image">
+        </div>
+
+        <div class="dni-details">
+            <p>Última actualización: 22/10/2024 21:22:21 hs</p>
+        </div>
+
+        <!-- Botones debajo de la imagen del DNI -->
+        <div class="action-buttons">
+            <button class="detail-btn" onclick="showError()"><i class="fas fa-eye"></i> Ver detalle</button>
+            <button class="disable-btn" onclick="showError()"><i class="fas fa-times-circle"></i> Desactivar DNI</button>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="showError()">
+                <i class="fas fa-qrcode"></i> Verifica código QR
+            </button>
+        </div>
+    </div>
+
+    <!-- Barra de navegación inferior -->
+    <div class="footer">
+        <div class="nav-button" onclick="showError()">
+            <i class="fas fa-home"></i>
+            <p>Inicio</p>
+        </div>
+        <div class="nav-button" onclick="showError()">
+            <i class="fas fa-newspaper"></i>
+            <p>Novedades</p>
+        </div>
+        <div class="nav-button" onclick="showError()">
+            <i class="fas fa-phone-alt"></i>
+            <p>Teléfonos</p>
+        </div>
+        <div class="nav-button" onclick="showError()">
+            <i class="fas fa-smile"></i>
+            <p>Tina</p>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar el mensaje de error -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <p>Algo salió mal, inténtelo nuevamente más tarde</p>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar/ocultar el contenido desplegable
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById("dropdown-content");
+            dropdownContent.classList.toggle("show");
+        }
+
+        // Función para mostrar el modal de error al hacer clic en los botones del footer, la flecha, o los botones de acción
+        function showError() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #F1F1F1;
+    position: relative;
+}
+
+/* Flecha para retroceder */
+.back-arrow {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: #ffff;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.header {
+    background-color: #366A99;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.dni-card {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.dni-header h2 {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dni-image-container {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dni-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.dni-details {
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Botones debajo de la imagen del DNI */
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.action-buttons button {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #366A99;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons button i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.action-buttons .detail-btn:hover {
+    background-color: #D0E1EB;
+}
+
+.action-buttons .disable-btn:hover {
+    background-color: #D0E1EB;
+}
+
+/* Estilo del botón desplegable */
+.dropdown {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dropdown-btn {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #366A99;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-btn i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Contenido desplegable, oculto por defecto */
+.dropdown-content {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    animation: slideDown 0.5s ease;
+}
+
+/* Mostrar el contenido desplegable cuando se haga clic */
+.dropdown-content.show {
+    display: block;
+}
+
+/* Estilo del mensaje de error */
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Barra de navegación inferior */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button {
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav-button i {
+    font-size: 24px;
+    color: #366A99;
+    margin-bottom: 5px;
+}
+
+.footer p {
+    color: #366A99;
+    font-size: 12px;
+}
+
+/* Modal (mensaje de error) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
