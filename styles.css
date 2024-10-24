@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Encode Sans', 'Arial', sans-serif;
 }
 
 body {
@@ -50,17 +50,56 @@ body {
     margin-bottom: 10px;
 }
 
+/* Contenedor de la tarjeta para el flip */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 250px; /* Fijar una altura */
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-back {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+
 .dni-image {
     width: 100%;
+    height: auto;
     border-radius: 5px;
 }
 
-.dni-details {
-    text-align: center;
-    color: #333;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
+
 
 /* Botones debajo de la imagen del DNI */
 .action-buttons {
@@ -120,26 +159,6 @@ body {
     font-size: 18px;
 }
 
-/* Contenido desplegable, oculto por defecto */
-.dropdown-content {
-    display: none;
-    text-align: center;
-    margin-top: 10px;
-    animation: slideDown 0.5s ease;
-}
-
-/* Mostrar el contenido desplegable cuando se haga clic */
-.dropdown-content.show {
-    display: block;
-}
-
-/* Estilo del mensaje de error */
-.error-message {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-}
-
 /* Barra de navegación inferior */
 .footer {
     display: flex;
@@ -188,5 +207,57 @@ body {
     width: 80%;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilo para el header */
+.header {
+    background-color: #366A99;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 50px; /* Asegura una altura mínima para el header */
+}
+
+/* Contenedor del contenido del header */
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Flecha para retroceder */
+.back-arrow {
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 10px; /* Espaciado entre la flecha y el título */
+    flex-shrink: 0; /* Evita que la flecha se reduzca */
+}
+
+/* Título al lado de la flecha */
+.header h1 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: normal;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta cualquier desbordamiento de texto */
+    text-overflow: ellipsis; /* Agrega "..." si el texto es demasiado largo */
+    flex-grow: 1; /* Permite que el título ocupe el espacio restante */
+    text-align: left; /* Alineación a la izquierda */
+    padding-left: 30px;
+}
+
+/* Ícono de refrescar alineado a la derecha */
+.refresh-icon {
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 10px; /* Espaciado entre el título y el ícono de refrescar */
+    flex-shrink: 0; /* Evita que el ícono se reduzca */
+}
+

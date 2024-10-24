@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DNI Digital</title>
-    <!-- Importar Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+    <!-- Importar Google Fonts para Encode Sans -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500&display=swap">
     <!-- FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -17,8 +17,19 @@
     </div>
 
     <div class="header">
-        <h1>DNI Digital</h1>
+        <div class="header-content">
+            <!-- Flecha para retroceder -->
+            <div class="back-arrow" onclick="showError()">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <h1>DNI Digital</h1>
+            <!-- Icono de refrescar -->
+            <div class="refresh-icon" onclick="showError()">
+                <i class="fas fa-sync-alt"></i>
+            </div>
+        </div>
     </div>
+    
 
     <div class="dni-card">
         <div class="dni-header">
@@ -26,8 +37,19 @@
         </div>
 
         <div class="dni-image-container">
-            <!-- Aquí va la imagen del DNI -->
-            <img src="images/dni-image.jpg" alt="DNI" class="dni-image">
+            <!-- Contenedor que alberga el frente y el reverso -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <!-- Frente del DNI -->
+                    <div class="flip-card-front">
+                        <img src="images/dni-image.jpg" alt="Frente del DNI" class="dni-image">
+                    </div>
+                    <!-- Reverso del DNI -->
+                    <div class="flip-card-back">
+                        <img src="images/dni-atras.jpg" alt="Reverso del DNI" class="dni-image">
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="dni-details">
@@ -91,6 +113,12 @@
         function closeModal() {
             document.getElementById("modal").style.display = "none";
         }
+
+        // Función para alternar la rotación de la tarjeta
+        const flipCard = document.querySelector('.flip-card-inner');
+        flipCard.addEventListener('click', () => {
+            flipCard.classList.toggle('flipped');
+        });
     </script>
 </body>
 </html>
